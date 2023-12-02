@@ -1,5 +1,6 @@
+data = File.read(__FILE__.sub("rb", "txt")).split("\n")
+
 LIMITS = {r: 12, g: 13, b: 14}
-data = File.read("2023-02.txt").split("\n")
 
 transformed_data = data.
   map do |line|
@@ -43,5 +44,5 @@ def process_part_2(data)
     end.sum
 end
 
-puts process_part_1(transformed_data)
-puts process_part_2(transformed_data)
+puts process_part_1(transformed_data) # 2317
+puts process_part_2(transformed_data) # 74804
