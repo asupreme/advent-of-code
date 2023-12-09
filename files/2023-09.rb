@@ -1,5 +1,5 @@
 def step_in(arr)
-  return [0,0] if arr.all?(&:zero?)
+  return [0] if arr.all?(&:zero?)
 
   lvl = arr[1..].map.with_index { _1-arr[_2] }
   extrapolate(lvl)
@@ -16,5 +16,5 @@ r = File.
   map(&:split).
   map { extrapolate(_1.map(&:to_i)) }
 
-puts r.map(&:last).sum # 1904165718
-puts r.map(&:first).sum # 964
+puts r.sum(&:last) # 1904165718
+puts r.sum(&:first) # 964
